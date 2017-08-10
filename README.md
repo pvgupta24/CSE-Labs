@@ -1,3 +1,3 @@
 # CS-Department-Labs
-### DDL
-### DSA
+>### DDL
+>### DSA
