@@ -32,6 +32,6 @@ main:
         la $a0, err  
         syscall
         
-        #Exit
-        add   $v0, $0, 10
-        syscall 
+    #Exit
+    add   $v0, $0, 10
+    syscall 
