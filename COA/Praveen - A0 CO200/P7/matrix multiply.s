@@ -1,15 +1,18 @@
 # Author	: Praveen Gupta (16C0235)
 # Date		: 5th Sept 2017
 
+# Matrix Multiplication
+
 .data
+
     m1: .word 1 2 3 4
     m2: .word 5 6 7 8
+    
     #r1 c1 r2 c2
     sizes: .word 2 2 2 2 
-    ans: .word 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-yo: .asciiz "Yo\n"
     error: .asciiz "c1 should be equal to r2\n"
-
+    newline: .asciiz "\n\n"
+    space: .asciiz "   "
 .text
 
 .globl main
@@ -53,11 +56,7 @@ beq $t0, $s0, breakOuter
         li $t2, 0
 
         inner: 
-        beq $t2, $s2, breakInner
-        #Print yo
-        li $v0, 4        
-        la $a0, yo  
-        syscall
+        beq $t2, $s2, breakInner    
 
             #for ( i = 0; i < r1; i++) {
             #   for ( j = 0; j <c2; j++) {
@@ -101,7 +100,7 @@ beq $t0, $s0, breakOuter
             j inner
 
         breakInner:
-        #Assume ans matrix starts from 0th
+        #Assume ans matrix starts from 0th data segment address
         la $t8, 0x10000000  
         #move $s7, $gp
         li $t9, 1
@@ -125,6 +124,64 @@ beq $t0, $s0, breakOuter
 
 breakOuter: 
 
+
+#   printf("Output: \n");
+#	for (i=0;i<r1;i++,printf("\n"))
+#	{
+#		for (j=0;j<c2;j++)
+#			printf("%d ",*(ans+i*c2+j));
+#	}
+
+
+li $t0, 0
+li $t3, 0
+
+out:
+beq $t0, $s0, breakOut
+    
+    li $t3, 0
+    mid:
+    beq $t3, $s3, breakMid
+    #Assume ans matrix starts from 0th data segment address
+        la $t8, 0x10000000  
+
+        li $a0, 0
+        li $t9, 1
+        mul $t9, $t0, 4
+        mul $t9, $t9, $s3
+        add $a0, $0, $t9
+
+        li $t9, 1            
+        mul $t9, $t3, 4
+        add $a0, $a0, $t9
+
+        add $a0, $a0, $t8
+        lw $a0, 0($a0)
+
+        #Printing term
+        addi $v0, $0, 1   
+        syscall 
+
+        #Printing space
+        li $v0, 4        
+        la $a0, space  
+        syscall 
+
+
+    addi $t3, $t3, 1
+        j mid
+
+    breakMid:
+
+    #Print newline
+    li $v0, 4        
+    la $a0, newline  
+    syscall 
+
+    addi $t0, $t0, 1
+    j out
+
+breakOut: 
 
 #Exit
 exit:

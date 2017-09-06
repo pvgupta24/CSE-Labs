@@ -5,33 +5,49 @@
 .data
     n: .word 5
     err: .asciiz "Enter +ve number\n"
+    inp: .asciiz "Enter n: "
+    out: .asciiz "Factorial of n is: "
 .globl main
 
 .text
 
 main:
 
-    lw $t0, n
+    # ask user for input
+    la        $a0, inp
+    li        $v0, 4
+    syscall
+
+    li        $v0, 5    
+    syscall
+    move      $t0, $v0
 
     #load 1 in product variable
-    addi $a0, $0, 1
+    addi $t1, $0, 1
 
     #if negative -> error
     blt $t0, $0, error
+
     loop:
         beq $t0, $0, endLoop
-        mul $a0, $a0, $t0
+        mul $t1, $t1, $t0
         addi $t0, $t0, -1
         j loop
 
     endLoop:
 
+    # Print result msg
+    la        $a0, out
+    li        $v0, 4
+    syscall
+
     #Print factorial
+    move $a0, $t1
     addi $v0, $0, 1     
     syscall 
 
 
-    #Exit
+    #Exit   
     exit:
         add   $v0, $0, 10
         syscall 
@@ -40,5 +56,5 @@ main:
         li $v0, 4        
         la $a0, err  
         syscall
-        j exit
+        j main
         

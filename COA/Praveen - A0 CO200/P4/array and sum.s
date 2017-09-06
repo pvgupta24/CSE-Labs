@@ -1,6 +1,7 @@
 # Author	: Praveen Gupta (16C0235)
 # Date		: 4th Sept 2017    
-    #Initialize array of 10 two digit numbers
+
+#Initialize array of 10 two digit numbers
 
 
     .data
@@ -41,6 +42,6 @@
             add $a0, $t2, $0   
             syscall 
 
-            #Exit
-            add   $v0, $0, 10
-            syscall 
+    #Exit
+    add   $v0, $0, 10
+    syscall 

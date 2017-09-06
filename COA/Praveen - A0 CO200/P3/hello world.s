@@ -4,7 +4,7 @@
 # Hello World
 
 .data   
-    output: .asciiz "Hello World !!!\n"
+    output: .asciiz "Hello World ...\n"
 
 .text
 .globl main

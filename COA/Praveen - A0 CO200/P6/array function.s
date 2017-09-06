@@ -38,13 +38,19 @@
         syscall
         
         #Printing the average of array
-        addi $v0, $0, 1   
+        addi $v0, $0, 3   
+
+        #v1 has sum a1 has length, Storev1/a1 in a0
         lw $a1, length
 
-        li.s $f1, 2.0
-        li.s $f2, 9.0
-        li $v0, 2
-        div $v1, $a1  
+        mtc1.d $a1, $f10
+        cvt.d.w $f10, $f10
+
+        mtc1.d $v1, $f8
+        cvt.d.w $f8, $f8
+        
+        div.d $f12, $f8, $f10 
+       # mov.d 
         #mflo $a0
         syscall 
 

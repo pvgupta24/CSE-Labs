@@ -8,14 +8,14 @@
 
 main:
     #Upper 16 bits
-    lui $t0, 0x0523
+    lui $t0, 0x5023
     #Lower 16 bits
-    addi $t0, $t0, 0x01234
+    addi $t0, $t0, 0x1234
 
     #Upper 16 bits
-    lui $t1, 0x0111
+    lui $t1, 0x1011
     #Lower 16 bits    
-    addi $t1, $t1, 0x01043
+    addi $t1, $t1, 0x1043
     
     add $t2, $t1, $t0
 
