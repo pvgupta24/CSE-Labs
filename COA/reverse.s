@@ -1,17 +1,10 @@
-
-#
 # Author	: Praveen Gupta (16C0235)
-# Date		: 26th August 2017
-#
+# Date		: 4th Sept 2017
 
-
-# data segment
 
 .data
 	str:	.asciiz		"HelloWorld!"
 	len:	.word		11
-
-# text segment
 	
 .text
 

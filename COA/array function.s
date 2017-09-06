@@ -1,3 +1,7 @@
+# Author	: Praveen Gupta (16C0235)
+# Date		: 4th Sept 2017
+
+
 #Implement a function that calculates the sum of the elements of the array. The function accepts the length of
 #the array and the address of the first element of the array. The function returns the sum to the caller. The
 #main procedure calculates the average of the elements of the array. The main procedure uses the mentioned
@@ -8,6 +12,7 @@
     second: .asciiz "\nAverage = "
     array : .word 1 2 4 6 
     length : .word 4
+    
 .globl main
 
 .text
@@ -35,8 +40,12 @@
         #Printing the average of array
         addi $v0, $0, 1   
         lw $a1, length
-        div $v1, $a1   
-        mflo $a0
+
+        li.s $f1, 2.0
+        li.s $f2, 9.0
+        li $v0, 2
+        div $v1, $a1  
+        #mflo $a0
         syscall 
 
 
