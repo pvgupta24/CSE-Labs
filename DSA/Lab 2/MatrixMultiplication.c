@@ -60,10 +60,13 @@ int main()
 	
 	
 	for ( i = 0; i < r1; i++) {
-        for ( j = 0; j <=c2; j++) {
+        for ( j = 0; j <c2; j++) {
             int sum = 0;
-            for (k = 0; k < r2; k++)
-                sum = sum + a[i * c1 + k] * b[k * c2 + j];
+			for (k = 0; k < r2; k++)
+			{	
+			printf("Yo\n");
+			
+                sum = sum + a[i * c1 + k] * b[k * c2 + j];}
             ans[i * c2 + j] = sum;
         }
 
@@ -90,6 +93,7 @@ int main()
 	printf("Output: \n");
 	for (row=0;row<r1;row++,printf("\n"))
 	{
+
 		for (col=0;col<c2;col++)
 		{
 			printf("%d ",*(ans+row*c2+col));
