@@ -5,7 +5,7 @@
 #define SIZE 100
 
 
-char stack[SIZE];
+int stack[SIZE];
 int top=-1;
 int temp;
 
@@ -19,7 +19,7 @@ int push(char c){
 	return 1;//Success
 }
 
-char pop(){
+int pop(){
 	if(top>=0)
 		return stack[top--];
 	

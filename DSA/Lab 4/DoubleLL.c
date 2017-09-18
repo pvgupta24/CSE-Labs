@@ -60,6 +60,7 @@ node *insert(node *head,int data,int pos){
 
     node *curr=head;
     node *temp=(node *)malloc(sizeof(node));
+    
     temp->data=data;
 
     if(pos==0){
