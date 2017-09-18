@@ -10,7 +10,7 @@ typedef struct node{
 
 int isLoop(node *head);
 int main(){
-printf("Loop in Linked List");
+printf("Loop in Linked List\n");
     
 node *head=NULL;
 
@@ -31,7 +31,7 @@ c->next=NULL;
 
 node *d=(node *)malloc(sizeof(node));
 d->data=1;
-c->next=d;
+//c->next=d;
 d->next=b;
 
 
@@ -46,7 +46,7 @@ int isLoop(node *head){
 
     node *walk=head,*hop=head;
     int count=0,loop=0;
-    while(walk != NULL && hop !=NULL && (walk=walk->next) !=NULL && (hop=hop->next->next)!=NULL){
+    while(walk != NULL && hop !=NULL && (walk=walk->next) !=NULL && (hop->next)!=NULL && (hop=hop->next->next)!=NULL){
         
         if(walk == hop){
             loop=1;
