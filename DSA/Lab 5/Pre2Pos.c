@@ -5,17 +5,17 @@
 #include<math.h>
 #define SIZE 100
 
-char stack[SIZE];
+char stack[SIZE][SIZE];
 int top=-1;
 
-void push(char c){
+void push(char *c){
 	if(top==SIZE-1){
 		printf("Stack Overflow");
 		exit(0);
 	}
 
 	++top;
-	stack[top]=c;//Success
+	strcpy(stack[top], c);//Success
 }
 
 int isOperator(char c){
@@ -35,9 +35,12 @@ int isOperator(char c){
 	return 0;
 }
 
-char pop(){
-	if(top>=0)
-		return stack[top--];
+char *pop(){
+    char *t;
+    if(top>=0)
+    {   strcpy(t, stack[top--]);
+        return t;
+    }
 	
 	printf("Invalid Popping...\n");
 	exit(0);
@@ -51,30 +54,37 @@ char pop(){
             int i,isOP;
             int len = strlen(inf);
             int j=0;
-            char post[SIZE];
-            char temp=' ',c;
+            char c;
             int isOp;	
-            char a,b;
+            char *a,*b;
             //printf("\n%d\n",len);
             for(i=len-1; i>-1; --i){
                 c=inf[i];
                 isOp = isOperator(c);               
 
                 if(isOp){
-                    a=pop();
-                    b=pop();
-                    push(c);             
-                    push(b);
-                    push(a);
+                    strcpy(a,pop());
+                    strcpy(b,pop());
+
+                    char res[SIZE];
+                    char d[2];
+                    d[0] = c;
+                    d[1] = '\0';
+                    strcpy(res, a);
+                    strcat(res, b);
+                    strcat(res, d);                    
+                    push(res);
                 }
                 else if(isalpha(c)){
-                    //printf("pushing .. %c",c);
-                    push(c);
-                    
+                    printf("pushing .. %c",c);
+                    char t[2];
+                    t[0] = c;
+                    t[1] = '\0';
+                    push(t);                   
                 }
 
             }
             while(top!=-1){
-                printf("%c",pop());
+                printf("%s",pop());
             }
         }
