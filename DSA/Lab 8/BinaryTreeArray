@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<limits.h>
+
+#define SIZE 128
+
+int tree[SIZE];
+
+void print(int i){
+
+	if(tree[i]==INT_MAX)
+	{
+		return;
+	}
+	printf("%d(",tree[i] );
+	print(2*i+1);
+	printf(" , ");
+	print(2*i+2);
+	printf(")");
+
+}
+
+int search(int i, int data){
+	if(tree[i]==INT_MAX)
+		return -1;
+	if(tree[i]==data)
+		return i;
+	if(data<tree[i])
+		return search(2*i+1, data);
+	else
+		return search(2*i+2, data);
+}
+
+int main(){
+	printf("Binary Tree using Array\n");
+	int c,data,i;
+	tree[0]=INT_MAX;//For Termination
+
+	again:
+	printf("\n1. Insert Node         2. Delete Node		  3.Search\n");
+	scanf("%d",&c);
+
+	switch(c){
+		case 1:	printf("Enter data\n");
+				scanf("%d",&data);
+				for(i=0;tree[i]!=INT_MAX;){
+					if(data<=tree[i])
+						i=2*i+1;
+					else
+						i=2*i+2;
+				}
+				tree[i]=data;
+				tree[2*i+1]=INT_MAX;
+				tree[2*i+2]=INT_MAX;
+				break;
+
+		case 2:	printf("Enter data to delete\n");
+				scanf("%d",&data);
+				int pos = search(0,data);
+				(pos==-1)?printf("Not Found\n"):(tree[pos]=INT_MAX);
+				break;		
+
+		case 3: printf("Enter data to search\n");
+				scanf("%d",&data);
+				(search(0,data)!=-1) ? printf("Found in tree\n"):printf("Not Found in tree\n");
+	}
+
+	print(0);
+
+	goto again;
+
+	return 0;
+}
