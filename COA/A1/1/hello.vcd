@@ -1,0 +1,16 @@
+$date
+	Sun Oct 15 14:59:45 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module hello $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+$end
+#10000

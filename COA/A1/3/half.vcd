@@ -1,0 +1,51 @@
+$date
+	Sun Oct 15 14:49:17 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module half $end
+$var wire 1 ! C $end
+$var wire 1 " S $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$scope module myAdder $end
+$var wire 1 % a $end
+$var wire 1 & b $end
+$var reg 1 ' C $end
+$var reg 1 ( S $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#100
+1(
+1"
+1$
+1&
+#200
+0$
+0&
+1#
+1%
+#300
+1'
+1!
+0(
+0"
+1$
+1&
+#400
