@@ -1,0 +1,571 @@
+$date
+	Mon Oct 16 21:57:20 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module register $end
+$var wire 32 ! q [31:0] $end
+$var reg 1 " clk $end
+$var reg 32 # d [31:0] $end
+$scope module myReg $end
+$var wire 1 $ clk $end
+$var wire 32 % data [31:0] $end
+$var wire 32 & out [31:0] $end
+$scope begin Register_Bits[0] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 ' d $end
+$var reg 1 ( q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[1] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 ) d $end
+$var reg 1 * q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[2] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 + d $end
+$var reg 1 , q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[3] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 - d $end
+$var reg 1 . q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[4] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 / d $end
+$var reg 1 0 q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[5] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 1 d $end
+$var reg 1 2 q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[6] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 3 d $end
+$var reg 1 4 q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[7] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 5 d $end
+$var reg 1 6 q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[8] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 7 d $end
+$var reg 1 8 q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[9] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 9 d $end
+$var reg 1 : q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[10] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 ; d $end
+$var reg 1 < q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[11] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 = d $end
+$var reg 1 > q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[12] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 ? d $end
+$var reg 1 @ q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[13] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 A d $end
+$var reg 1 B q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[14] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 C d $end
+$var reg 1 D q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[15] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 E d $end
+$var reg 1 F q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[16] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 G d $end
+$var reg 1 H q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[17] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 I d $end
+$var reg 1 J q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[18] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 K d $end
+$var reg 1 L q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[19] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 M d $end
+$var reg 1 N q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[20] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 O d $end
+$var reg 1 P q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[21] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 Q d $end
+$var reg 1 R q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[22] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 S d $end
+$var reg 1 T q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[23] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 U d $end
+$var reg 1 V q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[24] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 W d $end
+$var reg 1 X q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[25] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 Y d $end
+$var reg 1 Z q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[26] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 [ d $end
+$var reg 1 \ q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[27] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 ] d $end
+$var reg 1 ^ q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[28] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 _ d $end
+$var reg 1 ` q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[29] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 a d $end
+$var reg 1 b q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[30] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 c d $end
+$var reg 1 d q $end
+$upscope $end
+$upscope $end
+$scope begin Register_Bits[31] $end
+$scope module flipBro $end
+$var wire 1 $ clk $end
+$var wire 1 e d $end
+$var reg 1 f q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0f
+0e
+0d
+0c
+0b
+0a
+0`
+0_
+0^
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0V
+0U
+0T
+0S
+0R
+0Q
+0P
+0O
+0N
+0M
+0L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+b0 &
+b0 %
+0$
+b0 #
+0"
+b0 !
+$end
+#30
+1"
+1$
+#50
+1)
+1+
+b110 #
+b110 %
+#60
+0"
+0$
+#90
+1,
+1*
+b110 !
+b110 &
+1"
+1$
+#100
+0)
+1-
+b1100 #
+b1100 %
+#120
+0"
+0$
+#150
+0,
+10
+b10010 !
+b10010 &
+1)
+0+
+0-
+1/
+1"
+1$
+b10010 #
+b10010 %
+#180
+0"
+0$
+#200
+0)
+1-
+b11000 #
+b11000 %
+#210
+1.
+0*
+b11000 !
+b11000 &
+1"
+1$
+#240
+0"
+0$
+#250
+1)
+1+
+b11110 #
+b11110 %
+#270
+1*
+1,
+b11110 !
+b11110 &
+1"
+1$
+#300
+0)
+0-
+0/
+11
+0"
+0$
+b100100 #
+b100100 %
+#330
+12
+00
+0.
+0*
+b100100 !
+b100100 &
+1"
+1$
+#350
+1)
+0+
+1-
+b101010 #
+b101010 %
+#360
+0"
+0$
+#390
+1*
+0,
+1.
+b101010 !
+b101010 &
+1"
+1$
+#400
+0)
+0-
+1/
+b110000 #
+b110000 %
+#420
+0"
+0$
+#450
+10
+0.
+1,
+b110110 !
+b110110 &
+1)
+1+
+1"
+1$
+b110110 #
+b110110 %
+#480
+0"
+0$
+#500
+0)
+1-
+b111100 #
+b111100 %
+#510
+0*
+1.
+b111100 !
+b111100 &
+1"
+1$
+#540
+0"
+0$
+#550
+1)
+0+
+0-
+0/
+01
+13
+b1000010 #
+b1000010 %
+#570
+14
+02
+00
+0.
+0,
+1*
+b1000010 !
+b1000010 &
+1"
+1$
+#600
+0)
+1-
+0"
+0$
+b1001000 #
+b1001000 %
+#630
+0*
+1.
+b1001000 !
+b1001000 &
+1"
+1$
+#650
+1)
+1+
+b1001110 #
+b1001110 %
+#660
+0"
+0$
+#690
+1,
+1*
+b1001110 !
+b1001110 &
+1"
+1$
+#700
+0)
+0-
+1/
+b1010100 #
+b1010100 %
+#720
+0"
+0$
+#750
+0,
+10
+b1011010 !
+b1011010 &
+1)
+0+
+1-
+1"
+1$
+b1011010 #
+b1011010 %
+#780
+0"
+0$
+#800
+0)
+0-
+0/
+11
+b1100000 #
+b1100000 %
+#810
+12
+00
+0.
+0*
+b1100000 !
+b1100000 &
+1"
+1$
+#840
+0"
+0$
+#850
+1)
+1+
+b1100110 #
+b1100110 %
+#870
+1*
+1,
+b1100110 !
+b1100110 &
+1"
+1$
+#900
+0)
+1-
+0"
+0$
+b1101100 #
+b1101100 %

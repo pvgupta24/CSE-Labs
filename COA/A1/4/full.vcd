@@ -1,0 +1,120 @@
+$date
+	Mon Oct 16 16:30:32 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module full $end
+$var wire 1 ! C $end
+$var wire 1 " S $end
+$var reg 3 # inp [2:0] $end
+$scope module myAdder $end
+$var wire 1 ! C $end
+$var wire 1 " S $end
+$var wire 1 $ a $end
+$var wire 1 % b $end
+$var wire 1 & c $end
+$var wire 1 ' firstCarry $end
+$var wire 1 ( firstSum $end
+$var wire 1 ) secondcarry $end
+$scope module firstHalf $end
+$var wire 1 $ a $end
+$var wire 1 % b $end
+$var reg 1 * C $end
+$var reg 1 + S $end
+$upscope $end
+$scope module secondHalf $end
+$var wire 1 ( a $end
+$var wire 1 & b $end
+$var reg 1 , C $end
+$var reg 1 - S $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+b0 #
+0"
+0!
+$end
+#100
+1-
+1"
+1&
+b1 #
+#200
+1+
+1(
+1-
+1"
+1%
+0&
+b10 #
+#300
+1!
+1,
+1)
+0-
+0"
+1&
+b11 #
+#400
+0!
+0,
+0)
+1-
+1"
+1$
+0%
+0&
+b100 #
+#500
+1!
+1,
+1)
+0-
+0"
+1&
+b101 #
+#600
+1*
+1'
+0+
+0(
+0,
+0)
+0-
+0"
+1%
+0&
+b110 #
+#700
+1-
+1"
+1&
+b111 #
+#800
+0!
+0*
+0'
+0-
+0"
+0$
+0%
+0&
+b0 #
+#900
