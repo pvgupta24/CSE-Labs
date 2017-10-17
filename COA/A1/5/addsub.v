@@ -3,41 +3,35 @@
 `timescale 1ns/100ps
 
 module addSub(S,C,A,b,cin);
-    input cin;
     parameter n=4;
+    input cin;
     input [n-1:0] A,b;
     output[n-1:0] S;
     reg[n-1:0] B;
-    output C;
-    reg tempCarry;
+    output[n:0] C;
+    assign C[0]=cin;
     
-    always @(cin)
+    always @(cin or b)
         begin
             if(cin==1'b1)
                 assign B = ~b;
             else
-                assign B = b;
-            assign tempCarry=cin;
+                assign B = b;            
         end
        
-    
     genvar i;    
     generate
     for(i=0;i<n;i=i+1)
         begin : Ripple_Adder
-          FA bitAdder(S[i],C,A[i],B[i],tempCarry);
-          initial
-            assign tempCarry = C;
+          FA bitAdder(S[i],C[i+1],A[i],B[i],C[i]);
         end
     endgenerate
-    //assign C = tempCarry;    
 endmodule
 
 module FA(S,C,a,b,c);
     output wire S,C;
     input wire a,b,c;
-    wire firstSum,firstCarry,secondcarry;
-   
+    wire firstSum,firstCarry,secondcarry; 
     HA firstHalf(firstSum,firstCarry,a,b);
     HA secondHalf(S,secondcarry,firstSum,c);
     assign C = secondcarry|firstCarry;

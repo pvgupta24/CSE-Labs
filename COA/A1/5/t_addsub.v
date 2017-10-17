@@ -2,20 +2,20 @@
 `timescale 1ns/100ps
 module adderSubtractor();
     parameter n=4;  
-    wire C;
+    wire [n:0]C;
     wire[n-1:0] S;
     reg[n-1:0] A,B;
     reg cin;
 
-    addSub myAddSub(S,C,A,B,cin);
+    addSub myAddSub  (S,C,A,B,cin);
 
     initial 
     begin
         $dumpfile("addsub.vcd");
         $dumpvars(0,adderSubtractor);
-        $display(" A  | B  | C  S\n-----------------");     
+        $display(" A  | B  | C  S/D\n-----------------");     
 
-        A=4'b0110;
+        A=4'b0010;
         B=4'b0110;
 
         cin=1'b1;//0->add, 1->sub
@@ -27,6 +27,6 @@ module adderSubtractor();
 
     initial
         begin
-            $monitor("%b|%b| %b %b",A,B,C,S);
+            $monitor("%b|%b| %b %b",A,B,C[n],S);
         end
 endmodule
