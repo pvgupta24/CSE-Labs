@@ -1,5 +1,12 @@
-//  n-bit Adder/Subtractor. Using the FA module from the previous question, build an n-bit Adder/Subtractor module.
-//  Value of ‘n’ should be configurable. Possible n values are 4,8,. . .,256.
+/*
+------------------------------------------------------
+            Praveen Kumar Gupta  -  16CO235
+            Durvesh Bhalekar     -  16CO210
+------------------------------------------------------
+        n-bit Adder/Subtractor using Full Adders
+------------------------------------------------------
+
+*/
 `timescale 1ns/100ps
 
 module addSub(S,C,A,b,cin);

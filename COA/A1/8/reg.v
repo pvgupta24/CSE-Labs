@@ -1,9 +1,14 @@
 
-module REG(input [31:0] data,input clk,output [31:0]out);
-    //input[31:0] wire data;
-    //input wire clk;
-    //output[31:0] wire out;
+/*
+------------------------------------------------------
+            Praveen Kumar Gupta  -  16CO235
+            Durvesh Bhalekar     -  16CO210
+------------------------------------------------------
+           32-bit Register using D Flip Flops
+------------------------------------------------------
 
+*/
+module REG(input [31:0] data,input clk,output [31:0]out);
     genvar i;    
     generate
     for(i=0;i<32;i=i+1)

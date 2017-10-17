@@ -1,3 +1,12 @@
+/*
+------------------------------------------------------
+            Praveen Kumar Gupta  -  16CO235
+            Durvesh Bhalekar     -  16CO210
+------------------------------------------------------
+        Testbench for Full Adder using Half Adders
+------------------------------------------------------
+
+*/
 `timescale 1ns/100ps
 module full();
     wire S,C;

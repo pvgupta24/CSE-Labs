@@ -1,5 +1,12 @@
-//Full Adder. Using the HA module from the previous question, Implement a combinational full adder (FA).
+/*
+------------------------------------------------------
+            Praveen Kumar Gupta  -  16CO235
+            Durvesh Bhalekar     -  16CO210
+------------------------------------------------------
+              Full Adder using Half Adders
+------------------------------------------------------
 
+*/
 module FA(S,C,a,b,c);
 
     output wire S,C;

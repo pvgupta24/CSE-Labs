@@ -1,3 +1,12 @@
+/*
+------------------------------------------------------
+            Praveen Kumar Gupta  -  16CO235
+            Durvesh Bhalekar     -  16CO210
+------------------------------------------------------
+    Testbench 32-bit Register using D Flip Flops
+------------------------------------------------------
+
+*/
 `timescale 1ns/100ps
 
 module dff;
