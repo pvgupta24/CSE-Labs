@@ -43,19 +43,7 @@ node *rightRotate(node *head){
     return a;
 }
 
-node *insert(node *head,int data){
-    if(head==NULL)
-        return newNode(data);
-
-    else if(data < head->data)
-        head->left=insert(head->left,data);
-    else if(data > head->data)
-        head->right=insert(head->right,data);
-
-    //Assuming elements are unequal
-    else
-        return head;
-
+void balanceTreeBroBalance(node *head,int data){
     int bal = balFactor(head);        
     if(bal>1){
         //LL
@@ -79,6 +67,54 @@ node *insert(node *head,int data){
             return leftRotate(head);
         }
     }
+}
+
+node *insert(node *head,int data){
+    if(head==NULL)
+        return newNode(data);
+
+    else if(data < head->data)
+        head->left=insert(head->left,data);
+    else if(data > head->data)
+        head->right=insert(head->right,data);
+    //Assuming elements are unequal
+    else
+        return head;
+
+
+
+
+
+        
+    //balanceTreeBroBalance(head,data);
+        
+    int bal = balFactor(head);        
+    if(bal>1){
+        //LL
+        if(data < head->left->data){
+            return rightRotate(head);
+        }
+        //LR
+        else{
+            head->left=leftRotate(head->left);
+            return rightRotate(head);
+        }
+    }
+    else if(bal<-1){
+        //RR
+        if(data > head->right->data){
+            return leftRotate(head);
+        }
+        //RL
+        else{
+            head->right=rightRotate(head->right);
+            return leftRotate(head);
+        }
+    }
+
+
+
+
     return head;
     
 }
@@ -104,13 +140,13 @@ int getMax(node *head){
 	return curr->data;
 }
 
-int getMin(node *head){
+node *getMin(node *head){
 	if(head==NULL)
-		return INT_MIN;
+		return NULL;
 	node *curr=head;
 	while(curr->left!=NULL)
 		curr=curr->left;
-	return curr->data;
+	return curr;
 }
 
 int path[100];
@@ -144,8 +180,6 @@ void post(node *root){
 	post(root->left);
 	post(root->right);
 	printf("%d ",root->data);
-
-
 }
 
 void in(node *root){
@@ -156,6 +190,48 @@ void in(node *root){
 	in(root->right);
 
 }
+node *bstDelete(node *root,int data){
+    if(root==NULL)
+        return NULL;
+    else if(data<root->data){
+        root->left= bstDelete(root->left,data);
+        return root;
+    }//correct
+    else if(data>root->data){
+        root->right= bstDelete(root->right,data);
+        return root;
+    }
+
+    //Found here
+    if(root->left==NULL && root->right==NULL){
+        //Leaf remove it and attach NULL
+        free(root);
+        return NULL;
+    }
+    //Has only right
+    if(root->left==NULL){
+        node *temp=root->right;
+        free(root);
+        return temp;
+    }
+    if(root->right==NULL){
+        node *temp=root->left;
+        free(root);
+        return temp;
+    }
+    //has both child
+    node *minNode=getMin(root->right);
+    //minNode wont have left child
+    root->data=minNode->data;
+    root->right=bstDelete(root->right,minNode->data);
+    return root;    
+}
+
+void delete(node *head,int data){
+    head=bstDelete(head,data);
+    //balanceTreeBroBalance(head);
+}
+
 /*
 void balance(node *head){
     if(head==NULL)  return;
@@ -227,7 +303,7 @@ node *delete(node *head,int data){
 }
 */
 int main(){
-    node *head=NULL;
+    node *head=NULL,*minNode;
     
     printf("AVL Tree\n");
     int c,data,min,max,found;
@@ -244,22 +320,22 @@ int main(){
 
         case 2: printf("Enter data to delete\n");
                 scanf("%d",&data);
-                //head = delete(head,data);
+                delete(head,data);
                 break;		
         
         case 3: printf("Enter data to search\n");
-            scanf("%d",&data);
-            found = search(head,data);
-            if(found){
-                printf("Found in BST\nRoot");
-                for(int i=0;i<level;++i)
-                    printf("-->%d",path[i]);
-                printf("\n");
-            }
-            else{
-                printf("Not found in BST\n");
-            }
-            break;
+                scanf("%d",&data);
+                found = search(head,data);
+                if(found){
+                    printf("Found in BST\nRoot");
+                    for(int i=0;i<level;++i)
+                        printf("-->%d",path[i]);
+                    printf("\n");
+                }
+                else{
+                    printf("Not found in BST\n");
+                }
+                break;
 
         case 4: max = getMax(head);
                 if(max==INT_MAX)
@@ -268,11 +344,11 @@ int main(){
                     printf("Max is %d\n",max);
                 break;
 
-        case 5: min = getMin(head);
-                if(min==INT_MIN)
+        case 5: minNode = getMin(head);
+                if(minNode==NULL)
                     printf("Empty Tree\n");
                 else
-                    printf("Min is %d\n",min);
+                    printf("Min is %d\n",minNode->data);
                 break;
         case 6: printf("The height of AVL tree is %d\n",getHeight(head));
                 break;

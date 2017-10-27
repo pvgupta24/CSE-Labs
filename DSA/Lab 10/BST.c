@@ -96,18 +96,55 @@ int getMax(node *head){
 	return curr->data;
 }
 
-int getMin(node *head){
+node *getMin(node *head){
 	if(head==NULL)
-		return INT_MIN;
+		return NULL;
 	node *curr=head;
 	while(curr->left!=NULL)
 		curr=curr->left;
-	return curr->data;
+	return curr;
+}
+
+node *bstDelete(node *root,int data){
+    if(root==NULL)
+        return NULL;
+    else if(data<root->data){
+        root->left= bstDelete(root->left,data);
+        return root;
+    }//correct
+    else if(data>root->data){
+        root->right= bstDelete(root->right,data);
+        return root;
+    }
+
+    //Found here
+    if(root->left==NULL && root->right==NULL){
+        //Leaf remove it and attach NULL
+        free(root);
+        return NULL;
+    }
+    //Has only right
+    if(root->left==NULL){
+        node *temp=root->right;
+        free(root);
+        return temp;
+    }
+    if(root->right==NULL){
+        node *temp=root->left;
+        free(root);
+        return temp;
+    }
+    //has both child
+    node *minNode=getMin(root->right);
+    //minNode wont have left child
+    root->data=minNode->data;
+    root->right=bstDelete(root->right,minNode->data);
+    return root;    
 }
 
 int main(){
 
-	node *head=NULL;
+	node *head=NULL,*minNode;
 
 	printf("Binary Search Tree using LL\n");
 	int c,data,min,max,found;
@@ -124,7 +161,7 @@ int main(){
 
 		case 2:	printf("Enter data to delete\n");
 				scanf("%d",&data);
-				head = delete(head,data);
+				head = bstDelete(head,data);
 				break;		
 
 		case 3: printf("Enter data to search\n");
@@ -148,11 +185,11 @@ int main(){
 					printf("Max is %d\n",max);
 				break;
 
-		case 5: min = getMin(head);
-				if(min==INT_MIN)
+		case 5: minNode = getMin(head);
+				if(minNode==NULL)
 					printf("Empty Tree\n");
 				else
-					printf("Min is %d\n",min);
+					printf("Min is %d\n",minNode->data);
 				break;
 	}
 	level=0;
