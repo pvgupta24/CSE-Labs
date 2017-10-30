@@ -1,0 +1,263 @@
+$date
+	Sat Oct 28 14:53:19 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module t_16CO235 $end
+$var wire 1 ! q1 $end
+$var wire 1 " q2 $end
+$var wire 1 # y $end
+$var reg 1 $ X $end
+$var reg 1 % clk $end
+$var reg 1 & p1 $end
+$var reg 1 ' p2 $end
+$var reg 1 ( r1 $end
+$var reg 1 ) r2 $end
+$scope module solve $end
+$var wire 1 * X $end
+$var wire 1 + clk $end
+$var wire 1 , p1 $end
+$var wire 1 - p2 $end
+$var wire 1 ! q1 $end
+$var wire 1 " q2 $end
+$var wire 1 . r1 $end
+$var wire 1 / r2 $end
+$var reg 1 0 d1 $end
+$var reg 1 1 d2 $end
+$var reg 1 2 y $end
+$scope module REG1 $end
+$var wire 1 + clk $end
+$var wire 1 3 d $end
+$var wire 1 , preset $end
+$var wire 1 . reset $end
+$var reg 1 4 q $end
+$upscope $end
+$scope module REG2 $end
+$var wire 1 + clk $end
+$var wire 1 5 d $end
+$var wire 1 - preset $end
+$var wire 1 / reset $end
+$var reg 1 6 q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+16
+x5
+14
+x3
+x2
+x1
+x0
+0/
+0.
+1-
+1,
+1+
+x*
+0)
+0(
+1'
+1&
+1%
+x$
+x#
+1"
+1!
+$end
+#20
+12
+1#
+01
+05
+10
+13
+0%
+0+
+1$
+1*
+0'
+0-
+0&
+0,
+#100
+00
+03
+0$
+0*
+#150
+06
+0"
+04
+0!
+1%
+1+
+#180
+0%
+0+
+#200
+02
+0#
+11
+15
+1$
+1*
+#210
+16
+1"
+1%
+1+
+#240
+0%
+0+
+#270
+1%
+1+
+#300
+12
+1#
+01
+05
+0%
+0+
+0$
+0*
+#330
+06
+0"
+1%
+1+
+#360
+0%
+0+
+#390
+1%
+1+
+#400
+02
+0#
+11
+15
+1$
+1*
+#420
+0%
+0+
+#450
+16
+1"
+1%
+1+
+#480
+0%
+0+
+#500
+12
+1#
+01
+05
+0$
+0*
+#510
+06
+0"
+1%
+1+
+#540
+0%
+0+
+#570
+1%
+1+
+#600
+02
+0#
+11
+15
+0%
+0+
+1$
+1*
+#630
+16
+1"
+1%
+1+
+#660
+0%
+0+
+#690
+1%
+1+
+#700
+12
+1#
+01
+05
+0$
+0*
+#720
+0%
+0+
+#750
+06
+0"
+1%
+1+
+#780
+0%
+0+
+#800
+02
+0#
+11
+15
+1$
+1*
+#810
+16
+1"
+1%
+1+
+#840
+0%
+0+
+#870
+1%
+1+
+#900
+12
+1#
+01
+05
+0%
+0+
+0$
+0*
+#930
+06
+0"
+1%
+1+
+#960
+0%
+0+
+#990
+1%
+1+
+#1000
+02
+0#
+11
+15
+1$
+1*
+#1020
+0%
+0+

@@ -42,7 +42,7 @@ node *rightRotate(node *head){
     a->right=head;
     return a;
 }
-
+/*
 void balanceTreeBroBalance(node *head,int data){
     int bal = balFactor(head);        
     if(bal>1){
@@ -68,7 +68,7 @@ void balanceTreeBroBalance(node *head,int data){
         }
     }
 }
-
+*/
 node *insert(node *head,int data){
     if(head==NULL)
         return newNode(data);
@@ -85,7 +85,7 @@ node *insert(node *head,int data){
 
 
 
-        
+
     //balanceTreeBroBalance(head,data);
         
     int bal = balFactor(head);        
@@ -195,50 +195,77 @@ node *bstDelete(node *root,int data){
         return NULL;
     else if(data<root->data){
         root->left= bstDelete(root->left,data);
-        return root;
+        //return root;
     }//correct
     else if(data>root->data){
         root->right= bstDelete(root->right,data);
-        return root;
+        //return root;
     }
-
+    else{
     //Found here
     if(root->left==NULL && root->right==NULL){
         //Leaf remove it and attach NULL
-        free(root);
-        return NULL;
+        node *temp=root;
+        root=NULL;
+        free(temp); 
+        //return NULL;
     }
     //Has only right
-    if(root->left==NULL){
-        node *temp=root->right;
-        free(root);
-        return temp;
+    else if(root->left==NULL){
+        node *temp=root;
+        root=root->right;
+        free(temp);
+        //return temp;
     }
-    if(root->right==NULL){
-        node *temp=root->left;
-        free(root);
-        return temp;
+    else if(root->right==NULL){
+        node *temp=root;
+        root=root->left;
+        free(temp);
+        //return temp;
     }
-    //has both child
-    node *minNode=getMin(root->right);
-    //minNode wont have left child
-    root->data=minNode->data;
-    root->right=bstDelete(root->right,minNode->data);
+    else{
+        //has both child
+        node *minNode=getMin(root->right);
+        //minNode wont have left child
+        root->data=minNode->data;
+        root->right=bstDelete(root->right,minNode->data);
+    }
+}
+    // Redundant :(
+    int bal = balFactor(root);        
+    if(bal>1){
+        //LL
+        if(balFactor(root->left)>=0){
+            return rightRotate(root);
+        }
+        //LR
+        else{
+            root->left=leftRotate(root->left);
+            return rightRotate(root);
+        }
+    }
+    else if(bal<-1){
+        //RR
+        if(balFactor(root->left)<=0){
+            return leftRotate(root);
+        }
+        //RL
+        else{
+            root->right=rightRotate(root->right);
+            return leftRotate(root);
+        }
+    }
+
     return root;    
 }
 
-void delete(node *head,int data){
-    head=bstDelete(head,data);
-    //balanceTreeBroBalance(head);
-}
 
 /*
 void balance(node *head){
-    if(head==NULL)  return;
-    
+    if(head==NULL)  return;  
 }
 node *delNode,*delPar;
-//int delFound=0;
+int delFound=0;
 
 int delSearch(node *head, int data){
     if(head==NULL)
@@ -320,7 +347,7 @@ int main(){
 
         case 2: printf("Enter data to delete\n");
                 scanf("%d",&data);
-                delete(head,data);
+                bstDelete(head,data);
                 break;		
         
         case 3: printf("Enter data to search\n");
