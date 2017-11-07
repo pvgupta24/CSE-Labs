@@ -12,12 +12,12 @@ Testbench for 32-bit Register FILE using D Flip Flops
 
 module t_reg;
 
-reg clk,write;
+reg clk,write,reset;
 reg [4:0] reg1,reg2,writereg;
 reg [31:0] data;
 wire [31:0] read1,read2;
 
-RF registerFile(clk,reg1,reg2,writereg,write,data,read1,read2);
+RF registerFile(clk,reg1,reg2,writereg,write,data,read1,read2,reset);
 
 initial
 begin
@@ -27,6 +27,8 @@ begin
 end
 initial
     begin
+        reset = 1'b1;
+        reset = 1'b0;
         #2;
         clk=1'b0;
         repeat(100)

@@ -1,0 +1,463 @@
+$date
+	Tue Oct 31 21:58:39 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	10ps
+$end
+$scope module t_ALU $end
+$var wire 1 ! carry $end
+$var wire 1 " flag1 $end
+$var wire 1 # flag2 $end
+$var wire 1 $ result $end
+$var reg 1 % A $end
+$var reg 1 & A_invert $end
+$var reg 1 ' B $end
+$var reg 1 ( B_invert $end
+$var reg 1 ) Less $end
+$var reg 1 * carry_in $end
+$var reg 2 + op [0:1] $end
+$scope module MM1 $end
+$var wire 1 , A $end
+$var wire 1 - A_bar $end
+$var wire 1 . A_invert $end
+$var wire 1 / B $end
+$var wire 1 0 B_bar $end
+$var wire 1 1 B_invert $end
+$var wire 1 2 In1 $end
+$var wire 1 3 In2 $end
+$var wire 1 4 Less $end
+$var wire 1 5 R1 $end
+$var wire 1 6 R2 $end
+$var wire 1 7 R3 $end
+$var wire 1 ! carry $end
+$var wire 1 8 carry_in $end
+$var wire 1 " flag1 $end
+$var wire 1 # flag2 $end
+$var wire 2 9 op [0:1] $end
+$var wire 1 $ result $end
+$scope module M1 $end
+$var wire 1 , A $end
+$var wire 1 - B $end
+$var wire 1 5 Y $end
+$var wire 1 : Y1 $end
+$var wire 1 ; Y2 $end
+$var wire 1 . invert $end
+$var wire 1 < invert_bar $end
+$upscope $end
+$scope module M2 $end
+$var wire 1 / A $end
+$var wire 1 0 B $end
+$var wire 1 6 Y $end
+$var wire 1 = Y1 $end
+$var wire 1 > Y2 $end
+$var wire 1 1 invert $end
+$var wire 1 ? invert_bar $end
+$upscope $end
+$scope module F1 $end
+$var wire 1 ! C $end
+$var wire 1 @ C1 $end
+$var wire 1 A C2 $end
+$var wire 1 B C3 $end
+$var wire 1 7 S $end
+$var wire 1 8 X $end
+$var wire 1 5 Y $end
+$var wire 1 6 Z $end
+$upscope $end
+$scope module M3 $end
+$var wire 1 2 A $end
+$var wire 1 3 B $end
+$var wire 1 7 C $end
+$var wire 1 4 D $end
+$var wire 2 C op [0:1] $end
+$var wire 1 D op0_bar $end
+$var wire 1 E op1_bar $end
+$var wire 1 $ result $end
+$var wire 1 F result1 $end
+$var wire 1 G result2 $end
+$var wire 1 H result3 $end
+$var wire 1 I result4 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+xI
+0H
+0G
+0F
+xE
+xD
+bx C
+0B
+0A
+0@
+1?
+0>
+0=
+1<
+0;
+0:
+bx 9
+08
+07
+06
+05
+x4
+03
+02
+01
+10
+0/
+0.
+1-
+0,
+bx +
+0*
+x)
+0(
+0'
+0&
+0%
+x$
+0#
+x"
+0!
+$end
+#200
+1"
+0$
+1D
+1E
+0I
+b0 +
+b0 9
+b0 C
+#1200
+0E
+b1 +
+b1 9
+b1 C
+#2200
+0D
+1E
+b10 +
+b10 9
+b10 C
+#3200
+0"
+1$
+1H
+17
+13
+16
+00
+1=
+1'
+1/
+#3400
+1"
+0$
+1D
+0H
+b0 +
+b0 9
+b0 C
+#4400
+0"
+1$
+0E
+1G
+b1 +
+b1 9
+b1 C
+#5400
+0"
+1H
+1$
+0D
+1E
+0G
+b10 +
+b10 9
+b10 C
+#6400
+1#
+06
+15
+10
+0=
+0-
+1:
+0'
+0/
+1%
+1,
+#6600
+1"
+0$
+1D
+0H
+b0 +
+b0 9
+b0 C
+#7600
+0"
+1$
+0E
+1G
+b1 +
+b1 9
+b1 C
+#8600
+0"
+1H
+1$
+0D
+1E
+0G
+b10 +
+b10 9
+b10 C
+#9600
+1"
+0$
+0H
+1!
+07
+1A
+12
+0#
+16
+00
+1=
+1'
+1/
+#9800
+0"
+1$
+1F
+1D
+b0 +
+b0 9
+b0 C
+#10800
+0F
+0E
+1G
+b1 +
+b1 9
+b1 C
+#11800
+1"
+0$
+0D
+1E
+0G
+b10 +
+b10 9
+b10 C
+#12800
+1!
+0"
+1A
+13
+12
+1$
+1>
+16
+1;
+15
+1H
+10
+0=
+1-
+0:
+0?
+0<
+17
+1@
+1B
+0'
+0/
+0%
+0,
+1(
+11
+1&
+1.
+1*
+18
+#13000
+0"
+1F
+1$
+1D
+0H
+b0 +
+b0 9
+b0 C
+#14000
+0F
+0E
+1G
+b1 +
+b1 9
+b1 C
+#15000
+07
+0A
+0B
+02
+06
+0>
+00
+1'
+1/
+#15200
+1"
+0$
+1E
+0G
+b0 +
+b0 9
+b0 C
+#16200
+0"
+1$
+0E
+1G
+b1 +
+b1 9
+b1 C
+#17200
+1B
+0@
+16
+05
+1#
+1>
+0;
+10
+0-
+0'
+0/
+1%
+1,
+#17400
+1"
+0$
+1E
+0G
+b0 +
+b0 9
+b0 C
+#18400
+0"
+1$
+0E
+1G
+b1 +
+b1 9
+b1 C
+#19400
+1"
+0$
+0!
+0G
+17
+0B
+03
+06
+0#
+0>
+00
+1'
+1/
+#19600
+1E
+b0 +
+b0 9
+b0 C
+#20600
+0E
+b1 +
+b1 9
+b1 C
+#21600
+1!
+1"
+07
+1B
+13
+0$
+16
+0H
+1>
+0D
+1E
+10
+1-
+1<
+0'
+0/
+0%
+0,
+b10 +
+b10 9
+b10 C
+0&
+0.
+#22800
+0"
+1$
+1H
+0!
+17
+0B
+03
+06
+0>
+00
+1'
+1/
+#24000
+0"
+1$
+1A
+1B
+12
+1H
+1!
+16
+17
+1@
+13
+1#
+1>
+15
+10
+0-
+1:
+0'
+0/
+1%
+1,
+#25200
+1"
+0$
+0H
+07
+0A
+0B
+02
+06
+0#
+0>
+00
+1'
+1/
+#100000
